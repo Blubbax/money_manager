@@ -1,0 +1,6 @@
+<div class="listItem" *ngIf="transaction">
+  <div>{{transaction.description}}</div>
+  <div>{{transaction.date}}</div>
+  <div>{{transaction.amount}}</div>
+  <button type="button" (click)="delete()">Löschen</button>
+</div>
