@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="container">
+  <h1>Anmelden</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+    <div class="input">
+      <label for="username">Benutzername:</label><br>
+      <input type="text" formControlName="username" id="username">
+    </div>
+    <div class="input">
+      <label for="password">Passwort:</label><br>
+      <input type="password" formControlName="password" id="password">
+    </div>
+
+    <p *ngIf="!loginForm.valid">Bitte geben Sie Benutzername und Passwort an.</p>
+    <p *ngIf="credentialsInvalid">Die Kombination aus Benutzername und Passwort ist falsch.</p>
+
+    <button type="submit" [disabled]="!loginForm.valid">Anmelden</button>
+  </form>
+</div>

@@ -1,4 +1,4 @@
 <div class="transactionList">
   <h1>Ein- und Ausgaben</h1>
-  <app-transaction-list-item *ngFor="let transaction of transactions" (transaction)="transaction"></app-transaction-list-item>
+  <app-transaction-list-item *ngFor="let transaction of transactions" [transaction]="transaction"></app-transaction-list-item>
 </div>

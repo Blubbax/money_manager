@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,7 +8,9 @@ import { LoginComponent } from './components/login/login.component';
 import { TransactionListItemComponent } from './components/transaction-list-item/transaction-list-item.component';
 import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
 import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +18,16 @@ import { TransactionListComponent } from './components/transaction-list/transact
     LoginComponent,
     TransactionListItemComponent,
     CreateTransactionComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

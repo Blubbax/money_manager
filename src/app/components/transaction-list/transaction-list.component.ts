@@ -14,10 +14,12 @@ export class TransactionListComponent implements OnInit {
   constructor(private transactionService: TransactionService) { }
 
   ngOnInit(): void {
+    this.getTransactions();
   }
 
   getTransactions(): void {
     this.transactionService.getTransactions().subscribe(transactions => this.transactions = transactions)
+
   }
 
 }

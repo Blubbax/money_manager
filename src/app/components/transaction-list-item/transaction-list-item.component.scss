@@ -1,0 +1,12 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+
+  .negative {
+    color: red;
+  }
+
+  .positive {
+    color: green;
+  }
+}

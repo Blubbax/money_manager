@@ -1,1 +1,19 @@
-<p>create-transaction works!</p>
+<div class="container">
+  <h1>Neue Transaktion anlegen</h1>
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <div class="input">
+      <label for="description">Beschreibung:</label><br>
+      <input type="text" formControlName="description" id="description">
+    </div>
+    <div class="input">
+      <label for="amount">Betrag:</label><br>
+      <input type="number" formControlName="amount" id="amount">
+    </div>
+    <div class="input">
+      <label for="date">Datum:</label><br>
+      <input type="date" formControlName="date" id="date">
+    </div>
+
+    <button type="submit" [disabled]="!transactionForm.valid">Speichern</button>
+  </form>
+</div>
