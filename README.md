@@ -1,3 +1,5 @@
+[![CI Pipeline](https://github.com/Blubbax/money_manager/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Blubbax/money_manager/actions/workflows/main.yml)
+
 # MoneyManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
