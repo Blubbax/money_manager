@@ -1,3 +1,4 @@
+import { LoginService } from './../../service/login.service';
 import { TransactionService } from './../../service/transaction.service';
 import { Transaction } from './../../model/transaction';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,10 @@ export class TransactionListComponent implements OnInit {
   transactions: Transaction[] = [];
   private dataChangedSubscription: any;
 
-  constructor(private transactionService: TransactionService) { }
+  constructor(
+    private transactionService: TransactionService,
+    private loginService: LoginService
+    ) { }
 
   ngOnInit(): void {
     this.getTransactions();
@@ -25,7 +29,7 @@ export class TransactionListComponent implements OnInit {
 
 
   getTransactions(): void {
-    this.transactionService.getTransactions().subscribe(transactions => this.transactions = transactions)
+    this.transactionService.getTransactions(this.loginService.userValue.id).subscribe(transactions => this.transactions = transactions)
   }
 
 }

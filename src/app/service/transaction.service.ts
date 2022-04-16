@@ -24,8 +24,8 @@ export class TransactionService {
     private http: HttpClient
   ) { }
 
-  getTransactions(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(this.url + "transaction");
+  getTransactions(userId: number): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(this.url + "transaction/user/"+userId);
   }
 
   getTransaction(id: number): Observable<Transaction> {
