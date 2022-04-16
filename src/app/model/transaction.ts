@@ -1,6 +1,6 @@
 export interface Transaction {
   id: number;
-  userId: String;
+  userId: number;
   date: Date
   amount: number;
   description: String;

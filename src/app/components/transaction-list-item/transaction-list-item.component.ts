@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TransactionService } from './../../service/transaction.service';
 import { Transaction } from './../../model/transaction';
 import { Component, OnInit, Input } from '@angular/core';
@@ -10,6 +11,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TransactionListItemComponent implements OnInit {
 
   @Input() transaction: Transaction | undefined;
+
+  transactionForm = new FormGroup({
+    description: new FormControl('', Validators.required),
+    amount: new FormControl('', Validators.required),
+    date: new FormControl('', Validators.required),
+  });
 
   constructor(private transactionService: TransactionService) { }
 

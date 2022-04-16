@@ -11,6 +11,8 @@ import { TransactionListComponent } from './components/transaction-list/transact
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EditTransactionComponent } from './components/edit-transaction/edit-transaction.component';
+import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CreateTransactionComponent,
     TransactionListComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditTransactionComponent,
+    TransactionFormComponent
   ],
   imports: [
     BrowserModule,

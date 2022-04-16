@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { Transaction } from './../../model/transaction';
 import { TransactionService } from './../../service/transaction.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-transaction',
@@ -10,24 +10,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreateTransactionComponent implements OnInit {
 
-  transactionForm = new FormGroup({
-    description: new FormControl(''),
-    amount: new FormControl('', Validators.required),
-    date: new FormControl(''),
-  });
-
-  constructor(private transactionService: TransactionService) { }
+  constructor(
+    private transactionService: TransactionService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
-    if(this.transactionForm.valid) {
-      const description = this.transactionForm.value.description;
-      const amount = this.transactionForm.value.amount;
-      const date = this.transactionForm.value.date;
-      this.transactionService.addTransaction({description: description, amount: amount, date: date, userId: "1", id: 1} as Transaction).subscribe();
-    }
+  submit(transaction: Transaction): void {
+    this.transactionService.addTransaction(transaction).subscribe();
+    this.router.navigate(['']);
+  }
+
+  abort(): void {
+    this.router.navigate(['']);
   }
 
 }

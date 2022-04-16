@@ -1,6 +1,12 @@
-.listItem {
+@import "src/variables.scss";
+
+.transaction {
+
+  margin: 5px 0;
+  border-bottom: 1px solid $color-primary;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .negative {
     color: red;
@@ -9,4 +15,6 @@
   .positive {
     color: green;
   }
+
+
 }

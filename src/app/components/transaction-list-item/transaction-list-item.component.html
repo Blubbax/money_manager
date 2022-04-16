@@ -1,6 +1,7 @@
-<div class="listItem" *ngIf="transaction">
+<div class="transaction" *ngIf="transaction">
   <div>{{transaction.description}}</div>
   <div>{{transaction.date | date:'d.M.YYYY' }}</div>
   <div [ngClass]="transaction.amount < 0 ? 'negative' : 'positive'">{{transaction.amount | currency:'EUR'}}</div>
-  <button type="button" (click)="delete()">Löschen</button>
+  <a [routerLink]="['/editTransaction', transaction.id]" >Bearbeiten</a>
+  <button type="slim" (click)="delete()">Löschen</button>
 </div>

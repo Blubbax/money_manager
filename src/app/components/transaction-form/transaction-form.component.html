@@ -1,0 +1,21 @@
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  <div class="input">
+    <label for="description">Beschreibung:</label><br>
+    <input type="text" formControlName="description" id="description">
+  </div>
+  <div class="input">
+    <label for="amount">Betrag:</label><br>
+    <input type="number" formControlName="amount" id="amount">
+  </div>
+  <div class="input">
+    <label for="date">Datum:</label><br>
+    <input type="date" formControlName="date" id="date">
+  </div>
+
+  <p *ngIf="!transactionForm.valid" class="error">Beschreibung, Betrag und Datum müssen angegeben werden.</p>
+
+  <div class="buttons">
+    <button type="submit" class="primary" [disabled]="!transactionForm.valid">Speichern</button>
+    <button class="slim" (click)="onAbort()">Abbrechen</button>
+  </div>
+</form>

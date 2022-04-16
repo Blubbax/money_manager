@@ -1,0 +1,5 @@
+<div class="container">
+  <h1>Transaktion bearbeiten</h1>
+  <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+  <app-transaction-form [transaction]="transaction" (abortEvent)="abort()" (submitEvent)="submit($event)"></app-transaction-form>
+</div>
