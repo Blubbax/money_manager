@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { TransactionSummary } from './../model/transaction-summary';
 import { Transaction } from './../model/transaction';
 import { Injectable } from '@angular/core';
@@ -11,7 +12,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class TransactionService {
 
-  private url = 'http://localhost:8080/api/';
+  private url = environment.transactionApiUrl;
 
   public dataChanged : Subject<string> = new Subject();
 

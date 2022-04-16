@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { User } from './../model/user';
 import { Injectable } from '@angular/core';
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class LoginService {
 
-  apiUrl: String = "http://localhost:8081/api/";
+  apiUrl: String = environment.loginApiUrl;
 
   private userSubject: BehaviorSubject<any>;
   public user: Observable<User>;
