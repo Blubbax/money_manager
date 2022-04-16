@@ -1,6 +1,6 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { TransactionService } from './../../service/transaction.service';
-import { Transaction } from './../../model/transaction';
+import { TransactionService } from '../../service/transaction.service';
+import { Transaction } from '../../model/transaction';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 

@@ -4,17 +4,40 @@
 
   margin: 5px 0;
   border-bottom: 1px solid $color-primary;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .negative {
-    color: red;
+  .description {
+    flex-grow: 2;
+    flex-shrink: 2;
+    flex-basis: 25%;
   }
 
-  .positive {
-    color: green;
+  .date {
+    flex-grow: 1;
+    flex-shrink: 1;
   }
 
+  .amount {
+    flex-grow: 1;
+    flex-shrink: 1;
 
+    &.negative {
+      color: $color-neagtive;
+    }
+
+    &.positive {
+      color: $color-positive;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 5px;
+  }
 }

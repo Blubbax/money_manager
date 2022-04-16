@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { LoginService } from './../../service/login.service';
+import { LoginService } from '../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';

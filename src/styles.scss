@@ -11,15 +11,22 @@ html, body {
   color: $color-text-dark;
 }
 
+
+/*
+  ********************************************
+      General style for buttons and links
+  ********************************************
+*/
+
 button {
   background-color: transparent;
-  border: 1px solid #0D0D0D;
+  border: 1px solid $color-text-dark;
 
   min-height: 20px;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: bolder;
+  font-weight: bold;
   transition-duration: 500ms;
 }
 
@@ -48,6 +55,27 @@ button.slim:hover {
   border: 1px solid $color-text-dark;
 }
 
+a.button-slim-style {
+  border: 1px solid transparent;
+  text-decoration: none;
+  min-height: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition-duration: 500ms;
+}
+
+a.button-slim-style:hover {
+  border: 1px solid $color-text-dark;
+}
+
+/*
+  ********************************************
+      General style for forms and inputs
+  ********************************************
+*/
+
 .input {
   padding: 5px 0px;
 
@@ -56,7 +84,6 @@ button.slim:hover {
     width: 200px;
   }
 }
-
 
 .error {
   color: $color-error;

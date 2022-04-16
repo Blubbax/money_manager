@@ -1,11 +1,10 @@
-import { EditTransactionComponent } from './components/edit-transaction/edit-transaction.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginComponent } from './components/login/login.component';
+import { EditTransactionComponent } from './pages/edit-transaction/edit-transaction.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './helper/auth-guard';
-import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
+import { CreateTransactionComponent } from './pages/create-transaction/create-transaction.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
