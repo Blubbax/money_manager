@@ -1,0 +1,11 @@
+<div class="summary" *ngIf="transactionSummary">
+  <div>
+    Einnahmen: <span class="amount positive">{{ transactionSummary.income | currency:'EUR'}}</span>
+  </div>
+  <div>
+    Ausgaben: <span class="amount negative">{{ transactionSummary.expenses | currency:'EUR'}}</span>
+  </div>
+  <div>
+    Saldo: <span class="amount" [ngClass]="transactionSummary.balance < 0 ? 'negative' : 'positive'">{{ transactionSummary.balance | currency:'EUR'}}</span>
+  </div>
+</div>

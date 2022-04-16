@@ -11,12 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditTransactionComponent implements OnInit {
 
-  // transactionForm = new FormGroup({
-  //   description: new FormControl('', Validators.required),
-  //   amount: new FormControl('', Validators.required),
-  //   date: new FormControl('', Validators.required),
-  // });
-
   transaction: Transaction | null = null;
   errorMsg: String = "";
 
@@ -31,17 +25,21 @@ export class EditTransactionComponent implements OnInit {
   ngOnInit(): void {
     this.routeSubscription = this.route.params.subscribe((params: { [x: string]: string | number; }) => {
       const id = +params['id'];
-      this.transactionService.getTransaction(id).subscribe(transaction => {
-        this.transaction = transaction;
-        if (!this.transaction) {
-          this.errorMsg = "Die Transaktion konnte nicht gefunden werden.";
-        }
-      });
+      this.loadTransaction(id);
     })
   }
 
   ngOnDestroy() {
     this.routeSubscription.unsubscribe();
+  }
+
+  private loadTransaction(id: number) {
+    this.transactionService.getTransaction(id).subscribe(transaction => {
+      this.transaction = transaction;
+      if (!this.transaction) {
+        this.errorMsg = "Die Transaktion konnte nicht gefunden werden.";
+      }
+    });
   }
 
   submit(transaction: Transaction) : void {

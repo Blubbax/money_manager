@@ -10,16 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class TransactionListComponent implements OnInit {
 
   transactions: Transaction[] = [];
+  private dataChangedSubscription: any;
 
   constructor(private transactionService: TransactionService) { }
 
   ngOnInit(): void {
     this.getTransactions();
+    this.dataChangedSubscription = this.transactionService.dataChanged.subscribe(() => this.getTransactions());
   }
+
+  ngOnDestroy() {
+    this.dataChangedSubscription.unsubscribe();
+  }
+
 
   getTransactions(): void {
     this.transactionService.getTransactions().subscribe(transactions => this.transactions = transactions)
-
   }
 
 }

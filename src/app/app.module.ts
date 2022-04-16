@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EditTransactionComponent } from './pages/edit-transaction/edit-transaction.component';
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TransactionFormComponent } from './components/transaction-form/transact
     HeaderComponent,
     DashboardComponent,
     EditTransactionComponent,
-    TransactionFormComponent
+    TransactionFormComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

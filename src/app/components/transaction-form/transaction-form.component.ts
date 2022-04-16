@@ -37,7 +37,6 @@ export class TransactionFormComponent implements OnInit {
   }
 
   onSubmit() {
-
     if (this.transactionForm.valid) {
       const userId = this.loginService.userValue.id;
       const description = this.transactionForm.value.description;

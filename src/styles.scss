@@ -18,16 +18,24 @@ html, body {
   ********************************************
 */
 
-button {
-  background-color: transparent;
-  border: 1px solid $color-text-dark;
-
+@mixin button-style() {
   min-height: 20px;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
   transition-duration: 500ms;
+}
+
+@mixin button-style-hover() {
+  border: 1px solid $color-text-dark;
+}
+
+button {
+  @include button-style();
+
+  background-color: transparent;
+  border: 1px solid $color-text-dark;
 }
 
 button:hover {
@@ -48,26 +56,21 @@ button.primary:hover {
 
 button.slim {
   border: 1px solid transparent;
-  font-weight: bold;
 }
 
 button.slim:hover {
-  border: 1px solid $color-text-dark;
+  @include button-style-hover();
 }
 
 a.button-slim-style {
+  @include button-style();
+
   border: 1px solid transparent;
   text-decoration: none;
-  min-height: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition-duration: 500ms;
 }
 
 a.button-slim-style:hover {
-  border: 1px solid $color-text-dark;
+  @include button-style-hover();
 }
 
 /*
@@ -88,4 +91,20 @@ a.button-slim-style:hover {
 .error {
   color: $color-error;
   font-weight: bold;
+}
+
+/*
+  ********************************************
+      General style for amount colorization
+  ********************************************
+*/
+
+.amount {
+  &.negative {
+    color: $color-neagtive;
+  }
+
+  &.positive {
+    color: $color-positive;
+  }
 }

@@ -10,32 +10,22 @@
   align-items: center;
 
   .description {
-    flex-grow: 2;
-    flex-shrink: 2;
-    flex-basis: 25%;
+    flex-basis: 40%;
   }
 
   .date {
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex-basis: 15%;
   }
 
   .amount {
-    flex-grow: 1;
-    flex-shrink: 1;
-
-    &.negative {
-      color: $color-neagtive;
-    }
-
-    &.positive {
-      color: $color-positive;
-    }
+    flex-basis: 20%;
   }
 
   .actions {
     display: flex;
     align-items: center;
+    flex-basis: 25%;
+    justify-content: flex-end;
     gap: 10px;
 
     margin: 5px;

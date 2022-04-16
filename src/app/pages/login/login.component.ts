@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
   credentialsInvalid: boolean = false;
 
 
-
-
   constructor(
     private loginService: LoginService,
     private router: Router
