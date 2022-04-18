@@ -22,5 +22,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: np123dev/money_manager:tagname
+          tags: np123dev/money_manager:latest
 
