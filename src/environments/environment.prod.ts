@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  loginApiUrl: 'http://localhost:8081/api/',
-  transactionApiUrl: 'http://localhost:8080/api/'
+  loginApiUrl: 'http://34.110.198.71/api/',
+  transactionApiUrl: 'http://35.227.192.38/api/'
 };
