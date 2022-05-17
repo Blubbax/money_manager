@@ -21,11 +21,18 @@ spec:
           ports:
             - containerPort: 80
               name: mm-frontend
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 60
           resources:
             limits:
-              cpu: 300m
+              cpu: 200m
             requests:
-              cpu: 100m
+              cpu: 50m
 ---
 apiVersion: v1
 kind: Service
@@ -55,4 +62,17 @@ spec:
       name: mm-frontend
       port:
         number: 80
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mm-frontend-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: mm-frontend
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 75
 ---
