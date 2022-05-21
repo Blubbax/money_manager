@@ -32,7 +32,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: np123dev/money_manager:${GITHUB_SHA::8} , np123dev/money_manager:latest
+          tags: np123dev/money_manager:${GITHUB_SHA:8} , np123dev/money_manager:latest
       - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
         with:
           cluster_name: ${{ secrets.GKE_CLUSTER }}
@@ -41,5 +41,5 @@ jobs:
       - name: Deploy
         run: |-
           kubectl apply -f .kubernetes/gke-mm-frontend-deployment.yml
-          kubectl set image deployment/$DEPLOYMENT_NAME frontend=np123dev/money_manager:${GITHUB_SHA::8}
+          kubectl set image deployment/$DEPLOYMENT_NAME frontend=np123dev/money_manager:${GITHUB_SHA:8}
           kubectl rollout status deployment/$DEPLOYMENT_NAME
