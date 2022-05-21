@@ -16,7 +16,7 @@ spec:
         tier: frontend
     spec:
       containers:
-        - name: front-end
+        - name: frontend
           image: np123dev/money_manager:latest
           ports:
             - containerPort: 80
