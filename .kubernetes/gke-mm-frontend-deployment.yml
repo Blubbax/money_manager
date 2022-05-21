@@ -9,6 +9,11 @@ spec:
     matchLabels:
       app: mm-frontend
       tier: frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 2
   template:
     metadata:
       labels:
