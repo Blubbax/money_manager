@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mm-frontend-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "mm-frontend-ip"
+spec:
+  defaultBackend:
+    service:
+      name: mm-frontend
+      port:
+        number: 80
+---

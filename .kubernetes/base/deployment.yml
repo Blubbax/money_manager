@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mm-frontend
+  labels:
+    app: mm-frontend
+spec:
+  selector:
+    matchLabels:
+      app: mm-frontend
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: mm-frontend
+        tier: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: np123dev/money_manager:latest
+          ports:
+            - containerPort: 80
+              name: mm-frontend
+---
