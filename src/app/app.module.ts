@@ -14,6 +14,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EditTransactionComponent } from './pages/edit-transaction/edit-transaction.component';
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SummaryComponent } from './components/summary/summary.component';
     DashboardComponent,
     EditTransactionComponent,
     TransactionFormComponent,
-    SummaryComponent
+    SummaryComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

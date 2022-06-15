@@ -3,3 +3,5 @@
   <p class="error" *ngIf="transactions.length==0">Es sind keine Einnahmen oder Ausgaben vorhanden.</p>
   <app-transaction-list-item *ngFor="let transaction of transactions" [transaction]="transaction"></app-transaction-list-item>
 </div>
+
+<app-pagination (navigateToPage)="navigateToPage($event)" [pagination]="transactionService.pagination"></app-pagination>

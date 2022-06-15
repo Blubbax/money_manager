@@ -14,7 +14,7 @@ export class TransactionListComponent implements OnInit {
   private dataChangedSubscription: any;
 
   constructor(
-    private transactionService: TransactionService,
+    public transactionService: TransactionService,
     private loginService: LoginService
     ) { }
 
@@ -31,5 +31,10 @@ export class TransactionListComponent implements OnInit {
   getTransactions(): void {
     this.transactionService.getTransactions(this.loginService.userValue.id).subscribe(transactions => this.transactions = transactions)
   }
+
+  navigateToPage(event: string) {
+    this.transactionService.getTransactionsPage(event).subscribe(transactions => this.transactions = transactions)
+  }
+
 
 }
