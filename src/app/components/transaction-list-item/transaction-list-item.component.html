@@ -1,7 +1,7 @@
 <div class="transaction" *ngIf="transaction">
   <div class="description">{{transaction.description}}</div>
   <div class="date">{{transaction.date | date:'d.M.YYYY' }}</div>
-  <div class="amount" [ngClass]="transaction.amount < 0 ? 'negative' : 'positive'">{{transaction.amount | currency:'EUR'}}</div>
+  <div class="amount" [ngClass]="transaction.amount < 0 ? 'negative' : 'positive'">{{transaction.amount | currency:'EUR':true}}</div>
   <div class="actions">
     <a class="button-slim-style" [routerLink]="['/editTransaction', transaction.id]" >Bearbeiten</a>
     <button class="slim" (click)="delete()">Löschen</button>

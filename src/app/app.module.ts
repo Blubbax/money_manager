@@ -15,6 +15,9 @@ import { EditTransactionComponent } from './pages/edit-transaction/edit-transact
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import localeDe from '@angular/common/locales/de';
+import { registerLocaleData } from '@angular/common';
+ registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
@@ -37,7 +40,12 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'de-DE'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
